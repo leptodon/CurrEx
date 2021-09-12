@@ -13,6 +13,7 @@ import ru.cactus.currex.data.repository.CurrencyRepository
 import ru.cactus.currex.data.response_models.ValCurs
 import ru.cactus.currex.data.response_models.Valute
 import ru.cactus.currex.domain.SelectedValue
+import ru.cactus.currex.formatToShortString
 
 class MainViewModel(
     private val currencyRepository: CurrencyRepository
@@ -69,7 +70,11 @@ class MainViewModel(
             firstOrSecondInput?.let {
                 if (it) {
                     _secondValue.value =
-                        calculate(value.replace(",", ".").toFloatOrNull())?.toString()
+                        calculate(
+                            value
+                                .replace(",", ".")
+                                .toFloatOrNull()
+                        )?.formatToShortString(2)
                 }
             }
 
@@ -80,7 +85,11 @@ class MainViewModel(
             firstOrSecondInput?.let {
                 if (!it) {
                     _firstValue.value =
-                        calculate(value.replace(",", ".").toFloatOrNull())?.toString()
+                        calculate(
+                            value
+                                .replace(",", ".")
+                                .toFloatOrNull()
+                        )?.formatToShortString(2)
                 }
             }
 
@@ -120,12 +129,20 @@ class MainViewModel(
             SelectedValue.FIRST -> {
                 _firstValute.value = valute
                 _secondValue.value =
-                    calculate(firstValuteCurs.replace(",", ".").toFloatOrNull())?.toString()
+                    calculate(
+                        firstValuteCurs
+                            .replace(",", ".")
+                            .toFloatOrNull()
+                    )?.formatToShortString(2)
             }
             SelectedValue.SECOND -> {
                 _secondValute.value = valute
                 _firstValue.value =
-                    calculate(secondValuteCurs.replace(",", ".").toFloatOrNull())?.toString()
+                    calculate(
+                        secondValuteCurs
+                            .replace(",", ".")
+                            .toFloatOrNull()
+                    )?.formatToShortString(2)
             }
         }
     }
