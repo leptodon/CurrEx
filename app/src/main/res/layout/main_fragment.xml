@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainFragment">
+
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_first_cur"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        style="@style/TextViewPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_toolbar"
+        tools:text="120.5" />
+
+    <TextView
+        android:id="@+id/tv_first_name_valute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        style="@style/TextViewPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/et_first_cur"
+        app:layout_constraintStart_toStartOf="@+id/et_first_cur"
+        app:layout_constraintTop_toBottomOf="@+id/et_first_cur"
+        tools:text="RUB" />
+
+    <TextView
+        android:id="@+id/tv_change_first_valute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/change_curr"
+        android:textAlignment="center"
+        style="@style/TextViewButton"
+        app:layout_constraintEnd_toEndOf="@+id/tv_first_name_valute"
+        app:layout_constraintStart_toStartOf="@+id/tv_first_name_valute"
+        app:layout_constraintTop_toBottomOf="@+id/tv_first_name_valute" />
+
+    <EditText
+        android:id="@+id/et_second_cur"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        style="@style/TextViewPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_toolbar"
+        tools:text="120.5" />
+
+    <TextView
+        android:id="@+id/tv_second_name_valute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        style="@style/TextViewPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/et_second_cur"
+        app:layout_constraintStart_toStartOf="@+id/et_second_cur"
+        app:layout_constraintTop_toBottomOf="@+id/et_second_cur"
+        tools:text="RUB" />
+
+    <TextView
+        android:id="@+id/tv_change_second_valute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_curr"
+        android:textAlignment="center"
+        style="@style/TextViewButton"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_change_first_valute"
+        app:layout_constraintEnd_toEndOf="@+id/tv_second_name_valute"
+        app:layout_constraintStart_toStartOf="@+id/tv_second_name_valute" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_1"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_second_name_valute"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_first_cur" />
+
+    <FrameLayout
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone">
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="189dp"
+            tools:layout_editor_absoluteY="384dp" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

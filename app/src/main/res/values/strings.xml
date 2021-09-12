@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CurrEx</string>
+    <string name="select_currency">Выбор валют</string>
+    <string name="change_curr">Изменить\nвалюту</string>
+    <string name="currency_converter">Конвертер валют</string>
+    <string name="cancel_btn_name">Отмена</string>
+
+</resources>
