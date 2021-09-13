@@ -54,11 +54,11 @@ class MainFragment : BaseFragment(R.layout.main_fragment) {
                 viewModel.secondValuteCurs = value
             }
 
-            tvChangeFirstCurrency.setOnClickListener {
+            tvFirstCurrencyButton.setOnClickListener {
                 showDialog(SelectedValue.FIRST)
             }
 
-            tvChangeSecondCurrency.setOnClickListener {
+            tvSecondCurrencyButton.setOnClickListener {
                 showDialog(SelectedValue.SECOND)
             }
         }
