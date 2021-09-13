@@ -1,6 +1,5 @@
 package ru.cactus.currex.ui.main
 
-import android.view.View
 import androidx.core.widget.doOnTextChanged
 import by.kirich1409.viewbindingdelegate.viewBinding
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -31,7 +30,7 @@ class MainFragment : BaseFragment(R.layout.main_fragment) {
                 binding.etSecondCur.setText(it ?: "")
             }
             isProgress.observe(viewLifecycleOwner) {
-                binding.progressBar.visibility = if(it) View.VISIBLE else View.GONE
+                if(it) showLoader()
             }
         }
     }
@@ -66,5 +65,9 @@ class MainFragment : BaseFragment(R.layout.main_fragment) {
 
     private fun showDialog(selectedValue: SelectedValue) {
         CurrencyDialogFragment(selectedValue).show(childFragmentManager, null)
+    }
+
+    private fun showLoader(){
+        LoaderDialogFragment().show(childFragmentManager, null)
     }
 }
