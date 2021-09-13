@@ -19,15 +19,15 @@ class MainFragment : BaseFragment(R.layout.main_fragment) {
 
         with(viewModel) {
             firstValute.observe(viewLifecycleOwner) {
-                binding.tvFirstNameValute.text = it?.charCode
+                binding.tvFirstCharCode.text = it?.charCode
             }
             secondValute.observe(viewLifecycleOwner) {
-                binding.tvSecondNameValute.text = it?.charCode
+                binding.tvSecondCharCode.text = it?.charCode
             }
-            firstValue.observe(viewLifecycleOwner) {
+            firstCharCode.observe(viewLifecycleOwner) {
                 binding.etFirstCur.setText(it ?: "")
             }
-            secondValue.observe(viewLifecycleOwner) {
+            secondCharCode.observe(viewLifecycleOwner) {
                 binding.etSecondCur.setText(it ?: "")
             }
             isProgress.observe(viewLifecycleOwner) {
@@ -54,11 +54,11 @@ class MainFragment : BaseFragment(R.layout.main_fragment) {
                 viewModel.secondValuteCurs = value
             }
 
-            tvChangeFirstValute.setOnClickListener {
+            tvChangeFirstCurrency.setOnClickListener {
                 showDialog(SelectedValue.FIRST)
             }
 
-            tvChangeSecondValute.setOnClickListener {
+            tvChangeSecondCurrency.setOnClickListener {
                 showDialog(SelectedValue.SECOND)
             }
         }

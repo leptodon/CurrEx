@@ -41,15 +41,15 @@ class MainViewModel(
             _firstValute.value = firstValue
             _secondValute.value = secondValue
 
-            _firstValue.value = firstValue?.value ?: ""
-            _secondValue.value = secondValue?.value ?: ""
+            _firstCharCode.value = firstValue?.value ?: ""
+            _secondCharCode.value = secondValue?.value ?: ""
         }
 
-    private val _firstValue = MutableLiveData<String?>()
-    val firstValue: LiveData<String?> = _firstValue
+    private val _firstCharCode = MutableLiveData<String?>()
+    val firstCharCode: LiveData<String?> = _firstCharCode
 
-    private val _secondValue = MutableLiveData<String?>()
-    val secondValue: LiveData<String?> = _secondValue
+    private val _secondCharCode = MutableLiveData<String?>()
+    val secondCharCode: LiveData<String?> = _secondCharCode
 
     private val _firstValute = MutableLiveData<Valute?>()
     val firstValute: LiveData<Valute?> = _firstValute
@@ -69,7 +69,7 @@ class MainViewModel(
             field = value
             firstOrSecondInput?.let {
                 if (it) {
-                    _secondValue.value =
+                    _secondCharCode.value =
                         calculate(
                             value
                                 .replace(",", ".")
@@ -84,7 +84,7 @@ class MainViewModel(
             field = value
             firstOrSecondInput?.let {
                 if (!it) {
-                    _firstValue.value =
+                    _firstCharCode.value =
                         calculate(
                             value
                                 .replace(",", ".")
@@ -128,7 +128,7 @@ class MainViewModel(
         when (selectedValue) {
             SelectedValue.FIRST -> {
                 _firstValute.value = valute
-                _secondValue.value =
+                _secondCharCode.value =
                     calculate(
                         firstValuteCurs
                             .replace(",", ".")
@@ -137,7 +137,7 @@ class MainViewModel(
             }
             SelectedValue.SECOND -> {
                 _secondValute.value = valute
-                _firstValue.value =
+                _firstCharCode.value =
                     calculate(
                         secondValuteCurs
                             .replace(",", ".")

@@ -28,7 +28,7 @@
         tools:text="120.5" />
 
     <TextView
-        android:id="@+id/tv_first_name_valute"
+        android:id="@+id/tv_first_char_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -39,16 +39,16 @@
         tools:text="RUB" />
 
     <TextView
-        android:id="@+id/tv_change_first_valute"
+        android:id="@+id/tv_change_first_currency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/change_curr"
         android:textAlignment="center"
         style="@style/TextViewButton"
-        app:layout_constraintEnd_toEndOf="@+id/tv_first_name_valute"
-        app:layout_constraintStart_toStartOf="@+id/tv_first_name_valute"
-        app:layout_constraintTop_toBottomOf="@+id/tv_first_name_valute" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_first_char_code"
+        app:layout_constraintStart_toStartOf="@+id/tv_first_char_code"
+        app:layout_constraintTop_toBottomOf="@+id/tv_first_char_code" />
 
     <EditText
         android:id="@+id/et_second_cur"
@@ -64,7 +64,7 @@
         tools:text="120.5" />
 
     <TextView
-        android:id="@+id/tv_second_name_valute"
+        android:id="@+id/tv_second_char_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -75,22 +75,22 @@
         tools:text="RUB" />
 
     <TextView
-        android:id="@+id/tv_change_second_valute"
+        android:id="@+id/tv_change_second_currency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/change_curr"
         android:textAlignment="center"
         style="@style/TextViewButton"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_change_first_valute"
-        app:layout_constraintEnd_toEndOf="@+id/tv_second_name_valute"
-        app:layout_constraintStart_toStartOf="@+id/tv_second_name_valute" />
+        app:layout_constraintBottom_toBottomOf="@+id/tv_change_first_currency"
+        app:layout_constraintEnd_toEndOf="@+id/tv_second_char_code"
+        app:layout_constraintStart_toStartOf="@+id/tv_second_char_code" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/arrow_1"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_second_name_valute"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_second_char_code"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_first_cur" />
